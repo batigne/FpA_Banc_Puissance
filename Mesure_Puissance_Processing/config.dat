@@ -1,0 +1,7 @@
+*******************************************************
+Arduino Port: /dev/cu.usbmodem14101
+Arduino Speed: 115200
+*******************************************************
+Shunt resistance (in Ohm): 0.1
+Amplification Factor for current measurement: 50.0
+*******************************************************
