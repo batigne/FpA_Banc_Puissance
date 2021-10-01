@@ -281,7 +281,7 @@ void insertQuitButton() { // Define the exit button.
 
 void insertLogo() {
   PImage logo = logoDark;
-  String Link = "https://moodle.imt-atlantique.fr/course/view.php?id=11&section=14";
+  String Link = "https://moodle.imt-atlantique.fr/course/view.php?id=11&section=5";
   float logo_ratio = 2.5;
   int logo_shiftx = -10;
   int logo_shifty = -10;
