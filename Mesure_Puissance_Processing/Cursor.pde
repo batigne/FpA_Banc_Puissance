@@ -15,7 +15,7 @@ class Cursor extends GUIObject {
   float[] PosY_local = { 0., 0., 0. };
   int posMin;
   int posMax;
-  int Size = 5;
+  int Size = 10;
   int dashSpace = 4;
   color cursorColor = color(0,160,255);
   
