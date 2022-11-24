@@ -293,9 +293,10 @@ class DisplayScreen extends GUIObject {
   void computeOmega() {
     int startIndex = 0; // index at which the motor is powered on.
     int stopIndex = -1; // index at which the motor is switched off.
-    while(Quantity[kMotor][startIndex] == 0 && startIndex<NValues-1) startIndex += 1; // Find out when the motor has been started.
+    float MotorStopThreshold = 0.2; // Threshold (in V) on VMotor in case of non-zero value at the beginning. Not too high neither because of possible noise after stop.
+    while(Quantity[kMotor][startIndex] < MotorStopThreshold && startIndex<NValues-1) startIndex += 1; // Find out when the motor has been started.
     for (int i=startIndex; i<NValues-1; i++) { // Find out when the motor has stopped.
-      if (Quantity[kMotor][i]>0) stopIndex = i+1;
+      if (Quantity[kMotor][i]>MotorStopThreshold) stopIndex = i+1;
     }
     float meanVTachy = 0.; // Mean value of the tachymeter signal. It corresponds to the change of sector.
     for (int i=startIndex; i<stopIndex; i++) meanVTachy += Quantity[kTachy][i];
